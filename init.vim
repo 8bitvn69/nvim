@@ -61,3 +61,10 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+
+" show line numbers
+set nu
+
+" prevent wrapping lines and change sidescroll behavior
+set nowrap
+set sidescroll=1
