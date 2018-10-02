@@ -68,3 +68,6 @@ set nu
 " prevent wrapping lines and change sidescroll behavior
 set nowrap
 set sidescroll=1
+
+" when scrolling, keep cursor 3 lines away from screen border
+set scrolloff=3
