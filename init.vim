@@ -48,7 +48,9 @@ endif
 
 " use 256 colors when possible
 if (&term =~? 'mlterm\|xterm\|xterm-256\|screen-256') || has('nvim')
-	let &t_Co = 256
+    let &t_Co = 256
+    let g:monokai_term_italic = 1
+    let g:monokai_gui_italic = 1
     colorscheme monokai
 else
     colorscheme delek
