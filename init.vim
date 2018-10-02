@@ -28,7 +28,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Now the actual plugins:
 
-
+Plug 'crusoexia/vim-monokai'
 
 
 " Tell vim-plug we finished declaring plugins, so it can load them
@@ -40,4 +40,16 @@ call plug#end()
 if vim_plug_just_installed
     echo "Installing Bundles, please ignore key map error messages"
     :PlugInstall
+endif
+
+" ============================================================================
+" Vim settings and mappings
+" You can edit them as you wish
+
+" use 256 colors when possible
+if (&term =~? 'mlterm\|xterm\|xterm-256\|screen-256') || has('nvim')
+	let &t_Co = 256
+    colorscheme monokai
+else
+    colorscheme delek
 endif
