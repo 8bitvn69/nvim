@@ -11,7 +11,7 @@ if !filereadable(vim_plug_path)
     let vim_plug_just_installed = 1
 endif
 
-" manually load vim-plug the first time
+" Manually load vim-plug the first time
 if vim_plug_just_installed
     :execute 'source '.fnameescape(vim_plug_path)
 endif
@@ -22,14 +22,18 @@ endif
 " Active plugins
 " You can disable or add new ones here:
 
-" this needs to be here, so vim-plug knows we are declaring the plugins we
+" This needs to be here, so vim-plug knows we are declaring the plugins we
 " want to use
 call plug#begin('~/.config/nvim/plugged')
 
 " Now the actual plugins:
 
+" Monokai colorscheme
 Plug 'crusoexia/vim-monokai'
 
+" Vim airline - status bar
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
@@ -46,7 +50,7 @@ endif
 " Vim settings and mappings
 " You can edit them as you wish
 
-" use 256 colors when possible
+" Use 256 colors when possible
 if (&term =~? 'mlterm\|xterm\|xterm-256\|screen-256') || has('nvim')
     let &t_Co = 256
     let g:monokai_term_italic = 1
@@ -56,18 +60,21 @@ else
     colorscheme delek
 endif
 
-" tabs and spaces handling
+" Tabs and spaces handling
 set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-" show line numbers
+" Show line numbers
 set nu
 
-" prevent wrapping lines and change sidescroll behavior
+" Prevent wrapping lines and change sidescroll behavior
 set nowrap
 set sidescroll=1
 
-" when scrolling, keep cursor 3 lines away from screen border
+" When scrolling, keep cursor 3 lines away from screen border
 set scrolloff=3
+
+" Set theme for airline
+let g:airline_theme='jellybeans'
