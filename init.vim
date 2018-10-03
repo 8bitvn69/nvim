@@ -35,6 +35,15 @@ Plug 'crusoexia/vim-monokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Async autocompletion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Python autocompletion
+Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
+" Just to add the python go-to-definition and similar features, autocompletion
+" from this plugin is disabled
+Plug 'davidhalter/jedi-vim'
+
+
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
 
@@ -78,3 +87,14 @@ set scrolloff=3
 
 " Set theme for airline
 let g:airline_theme='jellybeans'
+
+" Disable autocompletion (using deoplete instead)
+let g:jedi#completions_enabled = 0
+
+" Turn off preview related to the selected completion option
+set completeopt-=preview
+
+" Deoplete setup
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_ignore_case = 1
+let g:deoplete#enable_smart_case = 1
