@@ -28,8 +28,12 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Now the actual plugins:
 
+" Monokai colorscheme
 Plug 'crusoexia/vim-monokai'
 
+" Vim airline - status bar
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
@@ -68,3 +72,6 @@ set nu
 " prevent wrapping lines and change sidescroll behavior
 set nowrap
 set sidescroll=1
+
+" Set theme for airline
+let g:airline_theme='jellybeans'
