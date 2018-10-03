@@ -30,6 +30,14 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'crusoexia/vim-monokai'
 
+" Async autocompletion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Python autocompletion
+Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
+" Just to add the python go-to-definition and similar features, autocompletion
+" from this plugin is disabled
+Plug 'davidhalter/jedi-vim'
+
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
@@ -68,3 +76,14 @@ set nu
 " prevent wrapping lines and change sidescroll behavior
 set nowrap
 set sidescroll=1
+
+" Disable autocompletion (using deoplete instead)
+let g:jedi#completions_enabled = 0
+
+" Turn off preview related to the selected completion option
+set completeopt-=preview
+
+" Deoplete setup
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_ignore_case = 1
+let g:deoplete#enable_smart_case = 1
