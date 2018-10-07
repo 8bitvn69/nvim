@@ -45,6 +45,8 @@ Plug 'davidhalter/jedi-vim'
 
 " Surround - parentheses, brackets, quotes, XML tags, ...
 Plug 'tpope/vim-surround'
+" Add . repeating support for Surround plugin
+Plug 'tpope/vim-repeat'
 
 " Automatically close parenthesis, etc
 Plug 'Townk/vim-autoclose'
