@@ -43,6 +43,12 @@ Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 " from this plugin is disabled
 Plug 'davidhalter/jedi-vim'
 
+" Surround - parentheses, brackets, quotes, XML tags, ...
+Plug 'tpope/vim-surround'
+
+" Automatically close parenthesis, etc
+Plug 'Townk/vim-autoclose'
+
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
@@ -98,3 +104,7 @@ set completeopt-=preview
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_ignore_case = 1
 let g:deoplete#enable_smart_case = 1
+
+" Fix to let ESC work as espected with Autoclose plugin
+" (without this, when showing an autocompletion window, ESC won't leave insert mode)
+let g:AutoClosePumvisible = {"ENTER": "\<C-Y>", "ESC": "\<ESC>"}
